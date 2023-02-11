@@ -19,7 +19,7 @@ Config.class.php - Database connection class
   
   `var $delay=0;` - cache lifetime (if used)
   
-  Папки должны иметь права на запись
+  Folders must have permission to write
   
   `cache`
   
@@ -29,6 +29,6 @@ Config.class.php - Database connection class
   
   `987admin123/templates_c`
   
-  Дамп базы данных 
+ Database dump
   
   `backup/alex_school2_2023-02-11.sql.gz`
