@@ -32,3 +32,7 @@ Config.class.php - Database connection class
  Database dump
   
   `backup/alex_school2_2023-02-11.sql.gz`
+  
+ Restore DB
+ 
+ `zcat backup/alex_school2_2023-02-11.sql.gz | mysql -ualex -p@di90HG18de73IO46es# alex_school2`
