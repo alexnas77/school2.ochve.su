@@ -1,0 +1,28 @@
+TD{color:#4C566A; font-family:tahoma;font-size:8pt;font-weight:normal;}
+P{color:#4C566A; font-family:tahoma;font-size:8pt;font-weight:normal;}
+A{color:#2666AA;  text-decoration:none}
+A:hover{color:#2666AA; text-decoration:underline}
+A.homelink{color:#000000; font-family:tahoma; font-size:8pt; font-weight:normal;text-decoration:none}
+A.homelink:hover{color:#000000; font-family:tahoma; font-size:8pt; font-weight:normal;text-decoration:underline}
+TD.toplinks{color:#000000; font-family:tahoma;font-size:8pt;font-weight:normal;}
+A.toplinks{color:#000000; font-family:tahoma; font-size:8pt; font-weight:normal;text-decoration:none}
+A.toplinks:hover{color:#000000; font-family:tahoma; font-size:8pt; font-weight:normal;text-decoration:underline}
+A.menuitem{color:#FFFFFF; font-family:tahoma; font-size:10pt; font-weight:bold;text-decoration:none}
+A.menuitem:hover{color:#E0E0E0; font-family:tahoma; font-size:10pt; font-weight:bold;text-decoration:none}
+TD.title{color:#FFFFFF; font-family:tahoma;font-size:8pt;font-weight:normal;}
+TD.infoitemheader{color:#42567E; font-family:tahoma;font-size:8pt;font-weight:bold;}
+TD.error{color:#FF0000; font-family:tahoma;font-size:8pt;font-weight:bold;}
+TABLE.infoitem{border-width:1; border-style:solid; border-color:#B9C0CE;}
+TABLE.error{border-width:1; border-style:solid; border-color:#FF0000; background-color: #FFE0E0;}
+TABLE.list{border-width:0; background-color: #E0E0E0;}
+TD.list{background-color: #FFFFFF; font-weight:normal; font-size:8pt;white-space: nowrap;}
+TD.listheader{background-color: #F0F0F0; font-weight:bold; font-size:8pt;white-space: normal;}
+.infoitem{color:#42567E; font-family:tahoma;font-size:8pt;font-weight:normal;}
+.copyright{color:#FFFFFF; font-family:tahoma;font-size:8pt;font-weight:normal;}
+.header{color:#FF4800; font-family:tahoma;font-size:15pt;font-weight:normal;}
+H1{color:#FF4800; font-family:tahoma;font-size:15pt;font-weight:normal;}
+.body{color:#4C566A; font-family:tahoma;font-size:8pt;font-weight:normal;}
+A.subheader{color:#008AFF; font-family:tahoma; font-size:10pt;font-weight:bold;text-decoration:none}
+A.subheader:hover{color:#FF4800; font-family:tahoma; font-size:10pt;font-weight:bold;text-decoration:none}
+.subheader{color:#008AFF; font-family:tahoma; font-size:10pt;font-weight:bold;text-decoration:none}
+H2{color:#008AFF; font-family:tahoma; font-size:10pt;font-weight:bold;text-decoration:none}

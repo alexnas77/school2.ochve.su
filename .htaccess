@@ -1,0 +1,112 @@
+#DirectoryIndex index_off.php index.php
+
+RemoveHandler .html
+RemoveHandler .htm
+AddType text/html .htm .html
+AddType application/x-httpd-php .php .htm .html
+AddDefaultCharset Windows-1251
+
+FileETag MTime Size
+<ifmodule mod_expires.c>
+<filesmatch ".(jpg|jpeg|gif|png|ico|css|js)$">
+ExpiresActive on
+ExpiresDefault "access plus 1 month"
+</filesmatch>
+</ifmodule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  <IfModule mod_setenvif.c>
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  </IfModule>
+</IfModule>
+
+php_flag register_globals on
+
+php_flag display_errors off
+
+#php_flag memory_limit 64M
+
+
+Options +FollowSymLinks
+
+#RedirectMatch 301 ^catalog\.php\?cat11\=metd.*$ http://www.yaguar-m.ru/
+#Redirect 301 /catalog.php?cat11=metd http://www.yaguar-m.ru/
+
+RewriteEngine on
+
+
+RewriteCond ${REQUEST_FILENAME} !-d
+
+RewriteCond ${REQUEST_FILENAME} !-f
+
+RewriteRule ^robots.txt$	robots.txt [L]
+
+RewriteRule ^987admin123/?$	/987admin123/index.php [L]
+
+RewriteRule ^www\.(.*)\.ru(.*) /$1/$2
+
+RewriteRule ^catalog/([^/]+)/([^/]+).html$ 	index.php?section=4&category=$1&item_id=$2 [L]
+
+RewriteRule ^catalog/([^/]+)/([^/]+)/([^/]+)/?$	index.php?section=4&category=$1&date=$2&active=$3 [L]
+
+RewriteRule ^catalog/([^/]+)/([^/]+)/([0-9]+)/?$	index.php?section=4&category=$1&brand=$2&page=$3 [L]
+
+RewriteRule ^catalog/([^/]+)/([^/]+)/?$	index.php?section=4&category=$1&date=$2 [L]
+
+RewriteRule ^pcatalog/([^/]+)/([^/]+)/([^/]+)/?$	index.php?section=4&print=1&category=$1&date=$2&active=$3 [L]
+
+RewriteRule ^pcatalog/([^/]+)/([^/]+)/?$	index.php?section=4&print=1&category=$1&date=$2 [L]
+
+RewriteRule ^catalog/([^/]+)/([0-9]+)/?$	index.php?section=4&category=$1&page=$2 [L]
+
+RewriteRule ^ecatalog/([^/]+)/([^/]+)/([^/]+)/?$	index.php?section=4&exel=1&category=$1&date=$2&active=$3 [L]
+
+RewriteRule ^ecatalog/([^/]+)/([^/]+)/?$	index.php?section=4&exel=1&category=$1&date=$2 [L]
+
+RewriteRule ^catalog/([^/]+)/?$	index.php?section=4&category=$1 [L]
+
+RewriteRule ^catalog/?$	index.php?section=4 [L]
+
+RewriteRule ^resourses/([^/]+)_p([0-9]+)$ 	index.php?section=25&category=$1&page=$2 [L]
+
+RewriteRule ^resourses/([^/]+)$ 	index.php?section=25&action=$1 [L]
+
+RewriteRule ^resourses\.html$ 	index.php?section=25 [L]
+
+RewriteRule ^frontpage([0-9]+).html/?$	index.php?page=$1
+
+RewriteRule ^(contact|zakazat-zvonok).html/?$	index.php?section=16&mode=$1
+
+RewriteRule ^([^/]+).html$ 	index.php?section=$1 [L]
+
+RewriteRule ^articles/([^/]+).html$	index.php?section=5&article_id=$1 [L]
+
+RewriteRule ^articles/?$	index.php?section=5 [L]
+
+RewriteRule ^news/([^/]+).html$	index.php?section=3&news_id=$1 [L]
+
+RewriteRule ^news/?$	 index.php?section=3 [L]
+
+#RewriteRule ^documents\.php\?art\=([0-9]+)$ 	index.php?section=3&news_id=$1  [L]
+
+RewriteRule ^basket/?$	index.php?section=7
+
+RewriteRule ^logout/?$	index.php?section=8&action=logout
+
+RewriteRule ^login/?$	index.php?section=8
+
+RewriteRule ^register/?$	index.php?section=9
+
+RewriteRule ^search/?$	index.php?section=6
+
+RewriteRule ^orders/?$	index.php?section=11
+
+RewriteRule ^product_fotos/([^/]+)/?$	index.php?section=12&product_id=$1
+
+ErrorDocument 404 /index.php?section=404

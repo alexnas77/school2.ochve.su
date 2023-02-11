@@ -1,0 +1,15 @@
+cache/*
+!cache/.folder
+templates_c/*
+!templates_c/.folder
+tmp/*
+!tmp/.folder
+web/*
+!web/.folder
+987admin123/templates_c/*
+!987admin123/templates_c/.folder
+webstat/*
+smarty_old/*
+
+ConfigLocal.class.php
+*/ConfigLocal.class.php

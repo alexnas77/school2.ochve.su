@@ -1,0 +1,7 @@
+<TABLE WIDTH=300 HEIGHT=70 BORDER=0 CELLPADDING=0 CELLSPACING=0 CLASS=error>
+  <TR>
+    <TD CLASS=error ALIGN=center VALIGN=CENTER>
+      {$Message}
+    </TD>
+  </TR>
+</TABLE>

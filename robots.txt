@@ -1,0 +1,3 @@
+User-Agent: *
+Disallow: /image.php
+Host: www.7dia.ru

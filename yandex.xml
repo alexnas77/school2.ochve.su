@@ -1,0 +1,1291 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2013-03-09 14:22">
+<shop>
+  <name>frezermsk.ru</name>
+  <company>frezermsk.ru</company>
+  <url>http://frezermsk2.ru/</url>
+  <currencies>
+        <currency id="RUR" rate="1.00"/>
+        <currency id="USD" rate="30.76"/>
+        <currency id="EUR" rate="41.17"/>
+      </currencies>
+  <categories>
+        <category id="155" parentId="0">Фрезеры</category>
+      </categories>
+  <offers>
+      <offer id="49" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/AEG/49.html</url>
+    <price>249.28</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/3969_0.jpeg</picture>
+    <vendor>AEG</vendor>
+    <model> OF 2050 E (403665)</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="3969" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/AEG/3969.html</url>
+    <price>249.28</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/3969_0.jpeg</picture>
+    <vendor>AEG</vendor>
+    <model> OF 2050 E (403665)</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="46" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Black%26Decker/46.html</url>
+    <price>87.37</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/3119_0.jpg</picture>
+    <vendor>Black and Decker</vendor>
+    <model> KW 900 EKA</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="3119" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Black%26Decker/3119.html</url>
+    <price>92.18</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/3119_0.jpg</picture>
+    <vendor>Black and Decker</vendor>
+    <model> KW 900 EKA</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="1" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Black%26Decker/1.html</url>
+    <price>205.00</price>
+    <currencyId>USD</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/236_0.jpg</picture>
+    <vendor>Black and Decker</vendor>
+    <model> XTW 1500 EKA</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="7866" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Bosch/7866.html</url>
+    <price>7741.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/13414719641009.jpeg</picture>
+    <vendor>Bosch</vendor>
+    <model> GKF 600 L-BOXX 060160A102</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="29" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/29.html</url>
+    <price>176.10</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1425_0.jpg</picture>
+    <vendor>BOSCH</vendor>
+    <model> GKF 600 Professional кромочный</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="1425" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/1425.html</url>
+    <price>6797.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1425_0.jpg</picture>
+    <vendor>BOSCH</vendor>
+    <model> GKF 600 Professional кромочный</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="32" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/32.html</url>
+    <price>379.79</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1428_0.jpg</picture>
+    <vendor>BOSCH</vendor>
+    <model> GMF 1400 CE Professional</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="1428" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/1428.html</url>
+    <price>16426.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1428_0.jpg</picture>
+    <vendor>BOSCH</vendor>
+    <model> GMF 1400 CE Professional</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="7867" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Bosch/7867.html</url>
+    <price>11858.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/13414722700758.jpeg</picture>
+    <vendor>Bosch</vendor>
+    <model> GOF 1300 CE 0601613603</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="30" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/30.html</url>
+    <price>295.59</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1426_0.jpg</picture>
+    <vendor>BOSCH</vendor>
+    <model> GOF 1300 CE Professional</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="33" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/33.html</url>
+    <price>405.33</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1429_0.jpg</picture>
+    <vendor>BOSCH</vendor>
+    <model> GOF 2000 CE Professional</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="1429" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/1429.html</url>
+    <price>18880.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1429_0.jpg</picture>
+    <vendor>BOSCH</vendor>
+    <model> GOF 2000 CE Professional</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="31" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/31.html</url>
+    <price>277.60</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1427_0.jpg</picture>
+    <vendor>BOSCH</vendor>
+    <model> GOF 900 CE Professional</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="1427" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/1427.html</url>
+    <price>12650.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1427_0.jpg</picture>
+    <vendor>BOSCH</vendor>
+    <model> GOF 900 CE Professional</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="7806" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Bosch/7806.html</url>
+    <price>13027.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/13408874876201.jpeg</picture>
+    <vendor>Bosch</vendor>
+    <model> GTR 30 CE по керамической плитке 060160C000 L-BOXX</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="7805" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Bosch/7805.html</url>
+    <price>6419.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/13408872843807.jpeg</picture>
+    <vendor>Bosch</vendor>
+    <model> GTR 30 CE по керамической плитке 060160C001 Картон</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="55" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/55.html</url>
+    <price>3399.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/4395_0.jpeg</picture>
+    <vendor>BOSCH</vendor>
+    <model> POF 1200 AE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="4395" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/4395.html</url>
+    <price>3600.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/4395_0.jpeg</picture>
+    <vendor>BOSCH</vendor>
+    <model> POF 1200 AE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="54" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/54.html</url>
+    <price>5099.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/4394_0.jpeg</picture>
+    <vendor>BOSCH</vendor>
+    <model> POF 1400 ACE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="4394" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/4394.html</url>
+    <price>5400.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/4394_0.jpeg</picture>
+    <vendor>BOSCH</vendor>
+    <model> POF 1400 ACE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="53" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/BOSCH/53.html</url>
+    <price>351.35</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/4303_0.jpeg</picture>
+    <vendor>BOSCH</vendor>
+    <model> Плоскодюбельная фрезерная машина GFF 22 A</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="56" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/56.html</url>
+    <price>158.21</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/4478_0.jpeg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 614</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="7432" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/DeWalt/7432.html</url>
+    <price>194.86</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/13219600971823.jpeg</picture>
+    <vendor>DeWalt</vendor>
+    <model> DW 615</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="2" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/2.html</url>
+    <price>206.97</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/441_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 621</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="441" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/441.html</url>
+    <price>201.96</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/441_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 621</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="3" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/3.html</url>
+    <price>377.50</price>
+    <currencyId>USD</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/442_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 621 K</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="4" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/4.html</url>
+    <price>616.00</price>
+    <currencyId>USD</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/443_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 624</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="5" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/5.html</url>
+    <price>341.93</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/444_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 625 E</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="444" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/444.html</url>
+    <price>333.69</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/444_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 625 E</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="6" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/6.html</url>
+    <price>481.51</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/447_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 626</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="447" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/447.html</url>
+    <price>462.25</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/447_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 626</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="7" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/7.html</url>
+    <price>629.00</price>
+    <currencyId>USD</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/448_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 627</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="8" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/8.html</url>
+    <price>353.81</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/449_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 629</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="449" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/449.html</url>
+    <price>353.81</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/449_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 629</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="9" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/9.html</url>
+    <price>149.98</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/450_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 670</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="450" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/450.html</url>
+    <price>143.98</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/450_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 670</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="10" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/10.html</url>
+    <price>391.75</price>
+    <currencyId>USD</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/452_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 682 K</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="11" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Dewalt/11.html</url>
+    <price>597.00</price>
+    <currencyId>USD</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/453_0.jpg</picture>
+    <vendor>Dewalt</vendor>
+    <model> DW 685 K</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="50" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/DWT/50.html</url>
+    <price>3871.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/4111_0.jpeg</picture>
+    <vendor>DWT</vendor>
+    <model> OF-1500 VS</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="51" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/DWT/51.html</url>
+    <price>4344.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/4112_0.jpeg</picture>
+    <vendor>DWT</vendor>
+    <model> OF-1800 VE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="4112" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/DWT/4112.html</url>
+    <price>4407.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/4112_0.jpeg</picture>
+    <vendor>DWT</vendor>
+    <model> OF-1800 VE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="52" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/DWT/52.html</url>
+    <price>4976.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/4113_0.jpeg</picture>
+    <vendor>DWT</vendor>
+    <model> OF-2100 VE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="4113" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/DWT/4113.html</url>
+    <price>5025.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/4113_0.jpeg</picture>
+    <vendor>DWT</vendor>
+    <model> OF-2100 VE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="39" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/HITACHI/39.html</url>
+    <price>211.46</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1588_0.jpg</picture>
+    <vendor>HITACHI</vendor>
+    <model> M 12 SA2</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="1588" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/HITACHI/1588.html</url>
+    <price>211.46</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1588_0.jpg</picture>
+    <vendor>HITACHI</vendor>
+    <model> M 12 SA2</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="44" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/HITACHI/44.html</url>
+    <price>214.37</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/2801_0.jpg</picture>
+    <vendor>HITACHI</vendor>
+    <model> M 12 V2</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="2801" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/HITACHI/2801.html</url>
+    <price>214.37</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/2801_0.jpg</picture>
+    <vendor>HITACHI</vendor>
+    <model> M 12 V2</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="45" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/HITACHI/45.html</url>
+    <price>134.83</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/2803_0.jpg</picture>
+    <vendor>HITACHI</vendor>
+    <model> M 8 SA2</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="2803" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/HITACHI/2803.html</url>
+    <price>134.83</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/2803_0.jpg</picture>
+    <vendor>HITACHI</vendor>
+    <model> M 8 SA2</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="40" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/HITACHI/40.html</url>
+    <price>162.96</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1589_0.jpg</picture>
+    <vendor>HITACHI</vendor>
+    <model> M 8 V2</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="1589" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/HITACHI/1589.html</url>
+    <price>154.00</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1589_0.jpg</picture>
+    <vendor>HITACHI</vendor>
+    <model> M 8 V2</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="6535" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Kolner/6535.html</url>
+    <price>1762.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/12881847166716.jpeg</picture>
+    <vendor>Kolner</vendor>
+    <model> KER 1200 V</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="57" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Kress/57.html</url>
+    <price>5589.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/12714241377680.gif</picture>
+    <vendor>Kress</vendor>
+    <model> 1050 FME</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="59" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Kress/59.html</url>
+    <price>112.00</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/12714245012253.gif</picture>
+    <vendor>Kress</vendor>
+    <model> 530 FM</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="60" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Kress/60.html</url>
+    <price>289.00</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/12714247077452.gif</picture>
+    <vendor>Kress</vendor>
+    <model> 800 FDF</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="58" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Kress/58.html</url>
+    <price>4734.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/12714243755198.gif</picture>
+    <vendor>Kress</vendor>
+    <model> 800 FME</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="43" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/43.html</url>
+    <price>188.33</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/2617_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3601 B</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="2617" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/2617.html</url>
+    <price>180.80</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/2617_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3601 B</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="17" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/17.html</url>
+    <price>186.60</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/811_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3612</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="811" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/811.html</url>
+    <price>191.45</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/811_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3612</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="18" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/18.html</url>
+    <price>242.12</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/812_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3612 C</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="812" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/812.html</url>
+    <price>239.16</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/812_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3612 C</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="19" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/19.html</url>
+    <price>118.31</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/813_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3620</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="20" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/20.html</url>
+    <price>110.00</price>
+    <currencyId>USD</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/814_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3706</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="21" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/21.html</url>
+    <price>128.25</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/815_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3707</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="815" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/815.html</url>
+    <price>123.12</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/815_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3707</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="22" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/22.html</url>
+    <price>143.19</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/816_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3708</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="816" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/816.html</url>
+    <price>137.46</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/816_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3708</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="23" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/23.html</url>
+    <price>154.90</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/817_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3708 F</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="817" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/817.html</url>
+    <price>148.70</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/817_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3708 F</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="26" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/26.html</url>
+    <price>208.76</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/820_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3901</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="820" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/820.html</url>
+    <price>200.41</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/820_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> 3901</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="24" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/24.html</url>
+    <price>220.21</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/818_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> RP 0910</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="818" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/818.html</url>
+    <price>221.00</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/818_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> RP 0910</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="25" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/25.html</url>
+    <price>232.40</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/819_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> RP 1110 C</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="819" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/819.html</url>
+    <price>223.10</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/819_0.jpg</picture>
+    <vendor>Makita</vendor>
+    <model> RP 1110 C</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="47" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/47.html</url>
+    <price>236.63</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/3931_0.jpeg</picture>
+    <vendor>Makita</vendor>
+    <model> RP 1800 F</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="3931" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/3931.html</url>
+    <price>236.76</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/3931_0.jpeg</picture>
+    <vendor>Makita</vendor>
+    <model> RP 1800 F</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="48" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/48.html</url>
+    <price>279.55</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/3932_0.jpeg</picture>
+    <vendor>Makita</vendor>
+    <model> RP 2300 FC</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="3932" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Makita/3932.html</url>
+    <price>277.97</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/3932_0.jpeg</picture>
+    <vendor>Makita</vendor>
+    <model> RP 2300 FC</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="38" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Metabo/38.html</url>
+    <price>9510.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1449_0.jpg</picture>
+    <vendor>Metabo</vendor>
+    <model> FME 737</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="1449" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Metabo/1449.html</url>
+    <price>9510.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1449_0.jpg</picture>
+    <vendor>Metabo</vendor>
+    <model> FME 737</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="34" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Metabo/34.html</url>
+    <price>13252.50</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1445_0.jpg</picture>
+    <vendor>Metabo</vendor>
+    <model> LF 724 S</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="35" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Metabo/35.html</url>
+    <price>12635.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1446_0.jpg</picture>
+    <vendor>Metabo</vendor>
+    <model> OfE 1229 Signal</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="1446" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Metabo/1446.html</url>
+    <price>12056.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1446_0.jpg</picture>
+    <vendor>Metabo</vendor>
+    <model> OfE 1229 Signal</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="36" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Metabo/36.html</url>
+    <price>17965.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1447_0.jpg</picture>
+    <vendor>Metabo</vendor>
+    <model> OfE 1812</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="37" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Metabo/37.html</url>
+    <price>11476.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1448_0.jpg</picture>
+    <vendor>Metabo</vendor>
+    <model> OFE 738</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="41" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Prorab/41.html</url>
+    <price>73.00</price>
+    <currencyId>USD</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1996_0.jpg</picture>
+    <vendor>Prorab</vendor>
+    <model> 6211 K</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="42" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Prorab/42.html</url>
+    <price>117.11</price>
+    <currencyId>USD</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1997_0.jpg</picture>
+    <vendor>Prorab</vendor>
+    <model> 6214 K</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="1997" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Prorab/1997.html</url>
+    <price>117.11</price>
+    <currencyId>USD</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1997_0.jpg</picture>
+    <vendor>Prorab</vendor>
+    <model> 6214 K</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="27" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Skil/27.html</url>
+    <price>62.78</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1067_0.jpg</picture>
+    <vendor>Skil</vendor>
+    <model> 1830 AA</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="28" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/Skil/28.html</url>
+    <price>62.84</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/1068_0.jpg</picture>
+    <vendor>Skil</vendor>
+    <model> 1830 AD</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="7419" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/SKIL/7419.html</url>
+    <price>63.04</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/13209236302308.jpeg</picture>
+    <vendor>SKIL</vendor>
+    <model> 1840 AA</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="7420" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/SKIL/7420.html</url>
+    <price>72.80</price>
+    <currencyId>EUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/13209244731256.jpeg</picture>
+    <vendor>SKIL</vendor>
+    <model> 1840AD</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="14" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/SPARKY/14.html</url>
+    <price>4194.82</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/577_0.jpg</picture>
+    <vendor>SPARKY</vendor>
+    <model> X 105CE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="577" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/SPARKY/577.html</url>
+    <price>4081.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/577_0.jpg</picture>
+    <vendor>SPARKY</vendor>
+    <model> X 105CE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="15" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/SPARKY/15.html</url>
+    <price>5042.88</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/579_0.jpg</picture>
+    <vendor>SPARKY</vendor>
+    <model> X 150 CE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="579" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/SPARKY/579.html</url>
+    <price>4906.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/579_0.jpg</picture>
+    <vendor>SPARKY</vendor>
+    <model> X 150 CE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="16" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/SPARKY/16.html</url>
+    <price>5683.12</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/581_0.jpg</picture>
+    <vendor>SPARKY</vendor>
+    <model> X 205 CE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="581" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/SPARKY/581.html</url>
+    <price>5528.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/581_0.jpg</picture>
+    <vendor>SPARKY</vendor>
+    <model> X 205 CE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="12" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/SPARKY/12.html</url>
+    <price>3074.44</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/572_0.jpg</picture>
+    <vendor>SPARKY</vendor>
+    <model> X 52E</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="572" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/SPARKY/572.html</url>
+    <price>2997.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/572_0.jpg</picture>
+    <vendor>SPARKY</vendor>
+    <model> X 52E</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="13" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/SPARKY/13.html</url>
+    <price>3825.42</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/575_0.jpg</picture>
+    <vendor>SPARKY</vendor>
+    <model> X 75CE</model>
+    <description>
+      
+    </description>
+    </offer>
+      <offer id="575" type="vendor.model" available="true" bid="25">
+    <url>http://frezermsk2.ru/catalog/155/SPARKY/575.html</url>
+    <price>3729.00</price>
+    <currencyId>RUR</currencyId>
+    <categoryId>155</categoryId>
+    <picture>http://frezermsk2.ru/foto/storefront/575_0.jpg</picture>
+    <vendor>SPARKY</vendor>
+    <model> X 75CE</model>
+    <description>
+      
+    </description>
+    </offer>
+    </offers>
+</shop>
+</yml_catalog>
