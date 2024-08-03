@@ -7,6 +7,7 @@
             <option value="1"{if $smarty.get.active == '1'} selected{/if}>Только активные ученики</option>
             <option value="-1"{if $smarty.get.active == '-1'} selected{/if}>Только отключенные ученики</option>
         </select>
+        <label><input type="checkbox" name="debts" value="1"{if $smarty.get.debts == '1'} checked{/if}>&nbsp;Должники</label>
     </form>
 </div>
 {literal}
@@ -14,12 +15,16 @@
         (function() {
             var url = new URL(window.location.href);
             url.searchParams.delete('active');
+            url.searchParams.delete('debts');
             for(let [name, value] of url.searchParams) {
               //console.log(`${name}=${value}`); // q=test me!, then tbs=qdr:y
               $input = $('<input>').attr({'type' : 'hidden', 'name' : name, 'value' : value});
               $('form').append($input);
             }
             $('form select').on('change', function() {
+                $('form').trigger('submit');
+            });
+            $('form input[type=checkbox]').on('change', function() {
                 $('form').trigger('submit');
             });
         })();

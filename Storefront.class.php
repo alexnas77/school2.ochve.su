@@ -182,6 +182,7 @@ class Storefront extends Widget
 
         $active_only = !empty($this->param('active')) ? intval($this->param('active')) : 0;
         
+        $debts = !empty($this->param('debts')) ? intval($this->param('debts')) : 0;
         if($active_only === 1) {
             $products_enabled = "AND products.enabled = 1";
         }
@@ -203,6 +204,37 @@ class Storefront extends Widget
         else
             $this->db->query("SELECT * FROM categories WHERE category_id = '$category_id'");
         $category = $this->db->result();
+        $category_filter = $category->category_id ? sql_placeholder(" AND products.category_id = ?",$category->category_id) : "";
+        $query = sql_placeholder("SELECT
+        products.product_id,
+	SUM( stat.delta ) AS sum_delta
+FROM
+	products
+	LEFT JOIN stat ON stat.product_id = products.product_id 
+WHERE 
+	products.enabled = 1 
+        $category_filter
+	AND stat.date >= ? 
+	AND stat.date <= ?
+GROUP BY
+	products.product_id
+HAVING sum_delta > 0", date("Y-m-d",strtotime($this->settings->start)), $end_datetime);
+        
+        $this->db->query($query);
+        //echo $query.";<br>";
+        
+        $products_debts = $this->db->results();
+        
+        $products_debts_ids = [];
+        
+        foreach ($products_debts as $pdv) {
+            $products_debts_ids[] = $pdv->product_id;
+        }
+        //echo "<pre>". print_r($products_debts_ids, true)."<pre>";
+        
+        if($debts > 0 ) {
+            $products_enabled = "AND products.product_id IN (". implode(",", $products_debts_ids).")";
+        }
         
         if(!empty($name)){
             $products[0] = new stdClass();
@@ -214,7 +246,6 @@ class Storefront extends Widget
             if (/*$interval>$this->config->delay || !empty($_POST)*/true)
             {
                 /*OR model LIKE ?*/
-                $category_filter = $category->category_id ? sql_placeholder(" AND products.category_id = ?",$category->category_id) : "";
                 $limit = $category->category_id ? "" : "LIMIT 10";
                 $query = sql_placeholder("SELECT model, CONCAT(categories.name,' класс') as category FROM  products
                                           LEFT JOIN categories ON categories.category_id=products.category_id
@@ -258,8 +289,8 @@ class Storefront extends Widget
                 
                 $query = sql_placeholder("SELECT SUM(stat.delta) as sum FROM  products
     LEFT JOIN stat ON stat.product_id=products.product_id
-    WHERE (products.category_id = ?) AND stat.date BETWEEN ? AND ? $products_enabled", 
-                $category->category_id, date("Y-m-d",strtotime($this->settings->start)), $start_datetime_1);
+    WHERE products.model = ? AND stat.date BETWEEN ? AND ? $products_enabled", 
+                $product->model, date("Y-m-d",strtotime($this->settings->start)), $start_datetime_1);
                 //AND products.enabled = 1
                 $this->db->query($query);
                 $begin = $this->db->result();
@@ -518,6 +549,8 @@ class Storefront extends Widget
 
         $active_only = !empty($this->param('active')) ? intval($this->param('active')) : 1;
         
+        $debts = !empty($this->param('debts')) ? intval($this->param('debts')) : 0;
+        //echo "debts = ".$debts.";<br>";
         if($active_only === 1) {
             $products_enabled = "AND products.enabled = 1";
         }
@@ -542,6 +575,36 @@ class Storefront extends Widget
 
     $subcategories = $this->get_categories($category_id);
 
+    $query = sql_placeholder("SELECT
+        products.product_id,
+	SUM( stat.delta ) AS sum_delta
+FROM
+	products
+	LEFT JOIN stat ON stat.product_id = products.product_id 
+WHERE
+	( products.category_id = ? ) 
+	AND products.enabled = 1 
+	AND stat.date >= ? 
+	AND stat.date <= ?
+GROUP BY
+	products.product_id
+HAVING sum_delta > 0;", $category->category_id, date("Y-m-d",strtotime($this->settings->start)), $datetime);
+        
+        $this->db->query($query);
+        //echo $query.";<br>";
+        
+        $products_debts = $this->db->results();
+        
+        $products_debts_ids = [];
+        
+        foreach ($products_debts as $pdv) {
+            $products_debts_ids[] = $pdv->product_id;
+        }
+        //echo "<pre>". print_r($products_debts_ids, true)."<pre>";
+        
+        if($debts > 0 ) {
+            $products_enabled = "AND products.product_id IN (". implode(",", $products_debts_ids).")";
+        }
 
 /*    $this->db->query("SELECT DISTINCT brand as name FROM products, categories WHERE categories.category_id = products.category_id AND (categories.category_id = '$category->category_id' OR categories.parent = '$category->category_id') AND products.enabled=1 ORDER BY brand");
     $brands = $this->db->results();

@@ -4,6 +4,7 @@
             <option value="1"{if strpos($smarty.server.REQUEST_URI,'/1') !== false} selected{/if}>Только активные ученики</option>
             <option value="-1"{if strpos($smarty.server.REQUEST_URI,'/-1') !== false} selected{/if}>Только отключенные ученики</option>
         </select>
+        <label><input type="checkbox" name="debts" value="1"{if strpos($smarty.server.REQUEST_URI,'/debts_') !== false} checked{/if}>&nbsp;Должники</label>
     </form>
 </div>
 {literal}
@@ -11,7 +12,12 @@
         (function() {
             $('form[name="active_change"] select[name="active"]').on('change', function() {
                 var url = window.location.pathname.replace(/^(\/[^\/]+\/[^\/]+\/[^\/]+)\/[^\/]+/i,'$1') + (parseInt($('select[name="active"]').val()) !== 1 ? '/' +  $('select[name="active"]').val() : '');
-                console.log(url);
+                //console.log(url);
+                window.location.href = url;
+            });
+            $('form[name="active_change"] input[name="debts"]').on('change', function() {
+                var url = window.location.pathname.replace(/^(\/[^\/]+\/[^\/]+\/[^\/]+)\/[^\/]+/i,'$1') + ($('input[name="debts"]').prop('checked') ? '/debts_' +  $('input[name="debts"]').val() : '');
+                //console.log(url);
                 window.location.href = url;
             });
         })();
@@ -94,13 +100,13 @@
                             $('input#toggle').on('change', function(){
                                 if($(this).prop('checked')) {
                                 $('tr.other').find('td:last-of-type').each(function () {
-                                   if (parseInt($(this).text()) < 500) {
+                                   if (parseInt($(this).text()) <= 0) {
                                       $(this).parent().hide();
                                    }
                                 });
                                 } else {
                                 $('tr.other').find('td:last-of-type').each(function () {
-                                   if (parseInt($(this).text()) < 500) {
+                                   if (parseInt($(this).text()) <= 0) {
                                       $(this).parent().show();
                                    }
                                 });
@@ -225,10 +231,22 @@
                     <input type="radio" name="adinner[{$product->product_id}]" size="20" value="2"{if $product->dinner==2} checked{assign var="dinner" value=$dinner+$Dinner*2}{assign var="ndinner" value=$ndinner+2}{/if}> 2 единицы<br />
                 </td>
                 <td>
-                    <input type="text" name="cash[{$product->product_id}]" size="20" value="{$product->cash}">{assign var="cash" value=$cash+$product->cash}
+                    {if $User->category_id == 1}
+                    <input type="text" name="cash[{$product->product_id}]" size="20" value="{$product->cash}">
+                    {else}
+                        {if $product->cash}{$product->cash}{else}0{/if}
+                        <input type="hidden" name="cash[{$product->product_id}]" size="20" value="{if $product->cash}{$product->cash}{else}0{/if}">
+                    {/if}
+                    {assign var="cash" value=$cash+$product->cash}
                 </td>
                 <td>
-                    <input type="text" name="card[{$product->product_id}]" size="20" value="{$product->card}">{assign var="card" value=$card+$product->card}
+                    {if $User->category_id == 1}
+                    <input type="text" name="card[{$product->product_id}]" size="20" value="{$product->card}">
+                    {else}
+                        {if $product->card}{$product->card}{else}0{/if}
+                        <input type="hidden" name="card[{$product->product_id}]" size="20" value="{if $product->card}{$product->card}{else}0{/if}">
+                    {/if}
+                    {assign var="card" value=$card+$product->card}                    
                 </td>
                 <td class=price style="width:10%;">
                     <nobr><span class={if $Price.$key+$product->delta>0}price-warning{else}price{/if}>{$Price.$key+$product->delta|string_format:"%.2f"} {$Currency->sign}</span></nobr>{assign var="after" value=$after+$Price.$key+$product->delta}

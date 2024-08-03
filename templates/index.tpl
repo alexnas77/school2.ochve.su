@@ -56,11 +56,11 @@
 </head>
 
 <body{* onload="fixheight();" onresize="fixheight();"*}>
-{if strpos($smarty.server.HTTP_HOST,'zdorovpitanie.ru')===false}
+{*if strpos($smarty.server.HTTP_HOST,'zdorovpitanie.ru')===false}
 <div class="warning">
 ВНИМАНИЕ! Этот сайт предназначен ТОЛЬКО ДЛЯ ТЕСТИРОВАНИЯ. Для РАБОТЫ пожалуйста перейдите на <a href="http{if $smarty.server.HTTPS === "on"}s{/if}://{$smarty.server.HTTP_HOST|regex_replace:"/\.[^\.]+\.[^\.]+$/":".zdorovpitanie.ru"}{$smarty.server.REQUEST_URI}">http{if $smarty.server.HTTPS === "on"}s{/if}://{$smarty.server.HTTP_HOST|regex_replace:"/\.[^\.]+\.[^\.]+$/":".zdorovpitanie.ru"}{$smarty.server.REQUEST_URI}</a>
 </div>	    
-{/if}
+{/if*}
 <div align="center" style="font-size:16px;color: #919191;background-color: White;padding: 10px 20px;"><b>{$Settings->company_name|default:""}</b></div>
     {$BodyContent}
 </body>

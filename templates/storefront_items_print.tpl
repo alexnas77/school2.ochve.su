@@ -39,6 +39,7 @@
             <option value="1"{if strpos($smarty.server.REQUEST_URI,'/1') !== false} selected{/if}>Только активные ученики</option>
             <option value="-1"{if strpos($smarty.server.REQUEST_URI,'/-1') !== false} selected{/if}>Только отключенные ученики</option>
         </select>
+        <label><input type="checkbox" name="debts" value="1"{if strpos($smarty.server.REQUEST_URI,'/debts_') !== false} checked{/if}>&nbsp;Должники</label>
     </form>
 </div>
 {literal}
@@ -46,7 +47,12 @@
         (function() {
             $('form[name="active_change"] select[name="active"]').on('change', function() {
                 var url = window.location.pathname.replace(/^(\/[^\/]+\/[^\/]+\/[^\/]+)\/[^\/]+/i,'$1') + (parseInt($('select[name="active"]').val()) !== 1 ? '/' +  $('select[name="active"]').val() : '');
-                console.log(url);
+                //console.log(url);
+                window.location.href = url;
+            });
+            $('form[name="active_change"] input[name="debts"]').on('change', function() {
+                var url = window.location.pathname.replace(/^(\/[^\/]+\/[^\/]+\/[^\/]+)\/[^\/]+/i,'$1') + ($('input[name="debts"]').prop('checked') ? '/debts_' +  $('input[name="debts"]').val() : '');
+                //console.log(url);
                 window.location.href = url;
             });
         })();
@@ -129,13 +135,13 @@
                             $('input#toggle').on('change', function(){
                                 if($(this).prop('checked')) {
                                 $('tr.other').find('td:last-of-type').each(function () {
-                                   if (parseInt($(this).text()) < 500) {
+                                   if (parseInt($(this).text()) <= 0) {
                                       $(this).parent().hide();
                                    }
                                 });
                                 } else {
                                 $('tr.other').find('td:last-of-type').each(function () {
-                                   if (parseInt($(this).text()) < 500) {
+                                   if (parseInt($(this).text()) <= 0) {
                                       $(this).parent().show();
                                    }
                                 });
