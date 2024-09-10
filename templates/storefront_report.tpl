@@ -138,9 +138,8 @@
                     {$product->sum->sum_card|escape}{assign var="card" value=$card+$product->sum->sum_card}
                 </td>
                 <td class=price style="width:10%;">
-                    <span class={if $product->total>0}price-warning{else}price{/if}>{$product->total}</span>{assign var="after" value=$after+$product->total}&nbsp;(&nbsp;
-                    {$product->begin+$product->sum->sum_breakfast_free+$product->sum->sum_breakfast+$product->sum->sum_lunch+$product->sum->sum_lunch2+$product->sum->sum_lunch3+$product->sum->sum_lunch_m+$product->sum->sum_dinner_m+$product->sum->sum_dinner-$product->sum->sum_cash-$product->sum->sum_card-$product->total}&nbsp;
-                    &nbsp;)
+                    {assign var=balance value=$product->begin+$product->sum->sum_breakfast_free+$product->sum->sum_breakfast+$product->sum->sum_lunch+$product->sum->sum_lunch2+$product->sum->sum_lunch3+$product->sum->sum_lunch_m+$product->sum->sum_dinner_m+$product->sum->sum_dinner-$product->sum->sum_cash-$product->sum->sum_card-$product->total}
+                    <span class={if $product->total>0}price-warning{else}price{/if}>{$product->total}</span>{assign var="after" value=$after+$product->total}&nbsp;(&nbsp;{$balance|string_format:"%.2f"}&nbsp;&nbsp;)
                 </td>
                 </TD>
             </tr>

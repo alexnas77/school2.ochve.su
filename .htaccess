@@ -59,11 +59,15 @@ RewriteRule ^catalog/([^/]+)/([^/]+)/([0-9]+)/?$	index.php?section=4&category=$1
 
 RewriteRule ^catalog/([^/]+)/([^/]+)/?$	index.php?section=4&category=$1&date=$2 [L]
 
+RewriteRule ^pcatalog/([^/]+)/([^/]+)/debts_([^/]+)/?$	index.php?section=4&print=1&category=$1&date=$2&debts=$3 [L]
+
 RewriteRule ^pcatalog/([^/]+)/([^/]+)/([^/]+)/?$	index.php?section=4&print=1&category=$1&date=$2&active=$3 [L]
 
 RewriteRule ^pcatalog/([^/]+)/([^/]+)/?$	index.php?section=4&print=1&category=$1&date=$2 [L]
 
 RewriteRule ^catalog/([^/]+)/([0-9]+)/?$	index.php?section=4&category=$1&page=$2 [L]
+
+RewriteRule ^ecatalog/([^/]+)/([^/]+)/debts_([^/]+)/?$	index.php?section=4&exel=1&category=$1&date=$2&debts=$3 [L]
 
 RewriteRule ^ecatalog/([^/]+)/([^/]+)/([^/]+)/?$	index.php?section=4&exel=1&category=$1&date=$2&active=$3 [L]
 

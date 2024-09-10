@@ -132,6 +132,11 @@ class Storefront extends Widget
         $category = intval($this->param('category'));
         $name = iconv("UTF-8","Windows-1251",strval($this->param('name')));
         
+        if($name === "*") {
+            $name = "";
+        }
+        
+        
         //echo "name = ".$name."<br />";
             
             if (/*$interval>$this->config->delay || !empty($_POST)*/true)
@@ -169,14 +174,17 @@ class Storefront extends Widget
     function fetch_report($category_id)
     {
 
-        $name = $this->param('name');
+        $name = $name_old = $this->param('name');        
+        if($name === "*") {
+            $name = "";
+        }
         
         $start_date = $this->param('start_date');
         $end_date = $this->param('end_date');
 
         $start_datetime = date("Y-m-d",strtotime($start_date));
         $start_datetime_1 = date("Y-m-d",(strtotime($start_date) - 3600*24));
-        $end_datetime = date("Y-m-d",strtotime($end_date));
+        $end_datetime = date("Y-m-d",strtotime("- 1day",strtotime($end_date)));
 
         $current_page = intval($this->param('page'));
 
@@ -204,7 +212,7 @@ class Storefront extends Widget
         else
             $this->db->query("SELECT * FROM categories WHERE category_id = '$category_id'");
         $category = $this->db->result();
-        $category_filter = $category->category_id ? sql_placeholder(" AND products.category_id = ?",$category->category_id) : "";
+        $category_filter = !empty($category) && !empty($category->category_id) ? sql_placeholder(" AND products.category_id = ?",$category->category_id) : "";
         $query = sql_placeholder("SELECT
         products.product_id,
 	SUM( stat.delta ) AS sum_delta
@@ -236,12 +244,12 @@ HAVING sum_delta > 0", date("Y-m-d",strtotime($this->settings->start)), $end_dat
             $products_enabled = "AND products.product_id IN (". implode(",", $products_debts_ids).")";
         }
         
-        if(!empty($name)){
+        if(!empty($name) || $name_old === "*"){
             $products[0] = new stdClass();
         $this->title = (!empty($category->name) ? $category->name." класс" : "Все классы")." с ".$start_date." по ".$end_date;
 
-        if($category->keywords)
-            $this->keywords = $category->keywords;
+        /*if($category->keywords)
+            $this->keywords = $category->keywords;*/
 
             if (/*$interval>$this->config->delay || !empty($_POST)*/true)
             {
@@ -275,7 +283,7 @@ HAVING sum_delta > 0", date("Y-m-d",strtotime($this->settings->start)), $end_dat
                                                  SUM(stat.card) as sum_card 
                                          FROM products
                                          LEFT JOIN stat ON stat.product_id=products.product_id
-                                         WHERE products.model = ? $products_enabled
+                                         WHERE products.model = ? $category_filter $products_enabled
                                          AND stat.date BETWEEN ? AND ?", 
                                         $product->model, 
                                         $start_datetime, 
@@ -289,7 +297,7 @@ HAVING sum_delta > 0", date("Y-m-d",strtotime($this->settings->start)), $end_dat
                 
                 $query = sql_placeholder("SELECT SUM(stat.delta) as sum FROM  products
     LEFT JOIN stat ON stat.product_id=products.product_id
-    WHERE products.model = ? AND stat.date BETWEEN ? AND ? $products_enabled", 
+    WHERE products.model = ? AND stat.date BETWEEN ? AND ? $category_filter $products_enabled", 
                 $product->model, date("Y-m-d",strtotime($this->settings->start)), $start_datetime_1);
                 //AND products.enabled = 1
                 $this->db->query($query);
@@ -297,7 +305,7 @@ HAVING sum_delta > 0", date("Y-m-d",strtotime($this->settings->start)), $end_dat
 
                 $query = sql_placeholder("SELECT SUM(stat.delta) as sum FROM  products
                 LEFT JOIN stat ON stat.product_id=products.product_id
-                WHERE (products.model = ?) AND stat.date BETWEEN ? AND ? $products_enabled", 
+                WHERE (products.model = ?) AND stat.date BETWEEN ? AND ? $category_filter $products_enabled", 
                         $product->model, 
                         date("Y-m-d",strtotime($this->settings->start)), 
                         $end_datetime);
@@ -344,7 +352,7 @@ HAVING sum_delta > 0", date("Y-m-d",strtotime($this->settings->start)), $end_dat
                                                  SUM(stat.card) as sum_card 
                                                  FROM  products
     LEFT JOIN stat ON stat.product_id=products.product_id
-    WHERE (products.category_id = ?) $products_enabled
+    WHERE (products.category_id = ?) $category_filter $products_enabled
     AND stat.date BETWEEN ? AND ?", 
                 $category->category_id, $start_datetime, $end_datetime);
                 //AND products.enabled = 1
@@ -356,7 +364,7 @@ HAVING sum_delta > 0", date("Y-m-d",strtotime($this->settings->start)), $end_dat
 
                 $query = sql_placeholder("SELECT SUM(stat.delta) as sum FROM  products
     LEFT JOIN stat ON stat.product_id=products.product_id
-    WHERE (products.category_id = ?) AND stat.date BETWEEN ? AND ? $products_enabled", 
+    WHERE (products.category_id = ?) AND stat.date BETWEEN ? AND ? $category_filter $products_enabled", 
                 $category->category_id, date("Y-m-d",strtotime($this->settings->start)), $end_datetime);
                 //AND products.enabled = 1
                 $this->db->query($query);
@@ -365,7 +373,7 @@ HAVING sum_delta > 0", date("Y-m-d",strtotime($this->settings->start)), $end_dat
                 
                 $query = sql_placeholder("SELECT SUM(stat.delta) as sum FROM  products
     LEFT JOIN stat ON stat.product_id=products.product_id
-    WHERE (products.category_id = ?) AND stat.date BETWEEN ? AND ? $products_enabled", 
+    WHERE (products.category_id = ?) AND stat.date BETWEEN ? AND ? $category_filter $products_enabled", 
                 $category->category_id, date("Y-m-d",strtotime($this->settings->start)), $start_datetime_1);
                 //AND products.enabled = 1
                 $this->db->query($query);
@@ -412,7 +420,7 @@ HAVING sum_delta > 0", date("Y-m-d",strtotime($this->settings->start)), $end_dat
                                                  SUM(stat.card) as sum_card 
                                                  FROM  products
     LEFT JOIN stat ON stat.product_id=products.product_id
-    WHERE (products.category_id = ?) $products_enabled
+    WHERE (products.category_id = ?) $category_filter $products_enabled
     AND stat.date BETWEEN ? AND ?", 
                 $category1->category_id, $start_datetime, $end_datetime);
                 //AND products.enabled = 1
@@ -424,7 +432,7 @@ HAVING sum_delta > 0", date("Y-m-d",strtotime($this->settings->start)), $end_dat
                 
                 $query = sql_placeholder("SELECT SUM(stat.delta) as sum FROM  products
     LEFT JOIN stat ON stat.product_id=products.product_id
-    WHERE (products.category_id = ?) AND stat.date BETWEEN ? AND ? $products_enabled", 
+    WHERE (products.category_id = ?) AND stat.date BETWEEN ? AND ? $category_filter $products_enabled", 
                 $category1->category_id, date("Y-m-d",strtotime($this->settings->start)), $start_datetime_1);
                 //AND products.enabled = 1
                 $this->db->query($query);
@@ -433,7 +441,7 @@ HAVING sum_delta > 0", date("Y-m-d",strtotime($this->settings->start)), $end_dat
 
                 $query = sql_placeholder("SELECT SUM(stat.delta) as sum FROM  products
     LEFT JOIN stat ON stat.product_id=products.product_id
-    WHERE (products.category_id = ?) AND stat.date BETWEEN ? AND ? $products_enabled", 
+    WHERE (products.category_id = ?) AND stat.date BETWEEN ? AND ? $category_filter $products_enabled", 
                 $category1->category_id, date("Y-m-d",strtotime($this->settings->start)), $end_datetime);
                 //AND products.enabled = 1
                 $this->db->query($query);
@@ -1491,11 +1499,11 @@ HAVING sum_delta > 0;", $category->category_id, date("Y-m-d",strtotime($this->se
     unset($file_string);
     unset($products_all);*/    
 
-    for($i=0;$i<$pages_num;$i++)
+    /*for($i=0;$i<$pages_num;$i++)
   	{
   		  $url[$i] = 'index.php'.$this->form_get(array('brand'=>$brand, 'page'=>$i));
 
-  	}
+  	}*/
 
     $qstring = array();
     $price = array();
@@ -1561,7 +1569,7 @@ HAVING sum_delta > 0;", $category->category_id, date("Y-m-d",strtotime($this->se
     //$this->smarty->assign('Sort_ids', $this->sort_ids);
     $this->smarty->assign('Brand', $brand);
     $this->smarty->assign('URLBrand', urlencode($brand));
-    $this->smarty->assign('PagesNum', $pages_num);
+    //$this->smarty->assign('PagesNum', $pages_num);
     //$this->smarty->assign('Url', $url);
     $this->smarty->assign('active_only', $active_only);
     $this->smarty->assign('CurrentPage', $current_page);

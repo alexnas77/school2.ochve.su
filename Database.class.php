@@ -38,9 +38,12 @@ class Database {
         $this->link = 0;
         $this->res_id = 0;
         $this->error_msg = "";
-        $this->file_log = dirname(__FILE__) . "/cache/db_" . $_SERVER['REMOTE_ADDR'];
-        $this->query_log = false;
-        //$this->query_log = true;
+        $this->file_log = dirname(__FILE__) . "/cache/db_" . $_SERVER['REMOTE_ADDR'] . str_replace(["/","?","&amp;","&","*"], ["_","_","_","_","asterisk"], $_SERVER['REQUEST_URI']);
+        if(filter_has_var(INPUT_COOKIE, "DEBUG") && filter_input(INPUT_COOKIE, "DEBUG") === "DEBUG") {
+            $this->query_log = true;
+        } else {
+            $this->query_log = false;            
+        }        
         $this->total_time = 0;
     }
 
@@ -101,7 +104,7 @@ class Database {
                 if (is_file($this->file_log)) {
                     $time = microtime(true) - $start;
                     $file = fopen($this->file_log, "a");
-                    fwrite($file, date("H:i:s") . "_\"" . preg_replace('/[\r\n\s]+/', ' ', $q) . "\"_" . $time . "\n");
+                    fwrite($file, date("H:i:s") . "_\"" . trim(preg_replace('/[\r\n\s]+/', ' ', $q)) . "\"_" . PHP_EOL . json_encode(debug_backtrace(2)) . PHP_EOL . $time . PHP_EOL . PHP_EOL);
                     fclose($file);
                 }
             }

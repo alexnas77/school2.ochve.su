@@ -180,7 +180,7 @@ class Widget
             ####  User login
             $login = isset($_SESSION['user_login']) ? $_SESSION['user_login'] : "";
             $password = isset($_SESSION['user_password']) ? $_SESSION['user_password'] : "";
-    		$query = sql_placeholder("select users.*, ucategories.discount as discount, ucategories.name as category from users left join ucategories on ucategories.category_id=users.category_id where login=? and password=? and active=1", $login, $password);
+    		$query = sql_placeholder("select users.*, ucategories.discount as discount, ucategories.name as category, ucategories.category_id from users left join ucategories on ucategories.category_id=users.category_id where login=? and password=? and active=1", $login, $password);
     		$this->db->query($query);
     		$this->user = $this->db->result();
             $this->smarty->assign('User', $this->user);

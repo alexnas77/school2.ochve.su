@@ -26,13 +26,16 @@ class Storefront extends Widget
   function get_categories($parent=0)
   {
       $brand = isset($_SESSION['brand']) ? $_SESSION['brand'] : '';
-      if($parent)
-      $brand_filter = strlen($brand) ? "AND categories.brands LIKE '%::".strtolower($brand)."::%'" : "";
+      if($parent) {
+          $brand_filter = strlen($brand) ? "AND categories.brands LIKE '%::".strtolower($brand)."::%'" : "";          
+      } else {
+          $brand_filter = "";
+      }
       $cat_num = intval(array_search($this->domain,array_values($this->subbrands)));
       if($cat_num>0)
-      $query = sql_placeholder("SELECT *, title$cat_num as title, description$cat_num as description FROM categories WHERE parent=? $brand_filter ORDER BY order_num", $parent);
+      $query = sql_placeholder("SELECT *, title$cat_num as title, description$cat_num as description FROM categories WHERE parent=? $brand_filter ORDER BY enabled DESC, order_num", $parent);
       else
-      $query = sql_placeholder("SELECT * FROM categories WHERE parent=? $brand_filter ORDER BY order_num", $parent);
+      $query = sql_placeholder("SELECT * FROM categories WHERE parent=? $brand_filter ORDER BY enabled DESC, order_num", $parent);
 
       $this->db->query($query);
 
@@ -70,7 +73,7 @@ class Storefront extends Widget
 
         //$categories[$k]->foto_id = $foto->foto_id;
 
-        $categories[$k]->filename = $foto->filename;
+        $categories[$k]->filename = !empty($foto->filename) ? $foto->filename : "";
         $brands = explode("::",$category->brands);
 
         if(!in_array(strtolower($brand),$brands) && empty($categories[$k]->subcategories)) unset($categories[$k]);
@@ -113,7 +116,7 @@ class Storefront extends Widget
   		$get = $this->form_get(array());
  		header("Location: index.php$get");
  	}
-    if($_POST['prices'])
+    if(isset($_POST['prices']))
     {
       $prices = $_POST['prices'];
       $currency_ids = $_POST['currency_id'];
@@ -199,9 +202,12 @@ class Storefront extends Widget
     }
 
 
-      if($current_brand)
-      $brand_filter = strlen($current_brand) ? "AND categories.brands LIKE '%::".strtolower($current_brand)."::%'" : "";
-    $this->db->query("SELECT * FROM categories WHERE parent=0 $brand_filter ORDER BY order_num");
+      if($current_brand) {
+          $brand_filter = strlen($current_brand) ? "AND categories.brands LIKE '%::".strtolower($current_brand)."::%'" : "";          
+      } else {
+          $brand_filter = "";
+      }
+    $this->db->query("SELECT * FROM categories WHERE parent=0 $brand_filter ORDER BY enabled DESC, order_num");
     $categories = $this->db->results();
   	$current_category_id = $this->param('category');
   	$start1 = 0;
@@ -222,7 +228,7 @@ class Storefront extends Widget
         $categories[$k]->name = $names;
         $brands = explode("::",$category->brands);
 
-        if(!in_array(strtolower($brand),$brands) && empty($categories[$k]->subcategories)) unset($categories[$k]);
+        if(!in_array(strtolower($current_brand),$brands) && empty($categories[$k]->subcategories)) unset($categories[$k]);
   	}
 
   	if(empty($current_category_id)) {
@@ -298,7 +304,7 @@ class Storefront extends Widget
  	$this->smarty->assign('CurrentBrand', $current_brand);
  	$this->smarty->assign('Currency_names', $currency_names);
   	$this->smarty->assign('PagesNavigation', $this->pages_navigation->body);
-  	$this->smarty->assign('CreateGoodURL', $this->form_get(array('section'=>'EditProduct', 'category'=>$category_id, 'brand'=>$current_brand)));
+  	$this->smarty->assign('CreateGoodURL', $this->form_get(array('section'=>'EditProduct', 'category'=>$current_category_id, 'brand'=>$current_brand)));
     $this->smarty->assign('Lang', $this->lang);
 	$this->body = $this->smarty->fetch('products.tpl');
   }
@@ -320,6 +326,7 @@ class EditProduct extends Widget
     $this->add_param('page');
     $this->add_param('brand');
     $this->add_param('category');
+    $this->item = new stdClass();
     $this->prepare();
   }
 
@@ -425,15 +432,15 @@ class EditProduct extends Widget
  	$product = $this->db->result();
  	if($product)
  	{
-  	$this->item->category_product_id = $product->category_id;
-    $this->item->category_id = $this->param('category');
-    }
- 	elseif(!isset($_POST['category_id']))
-  	$this->item->category_product_id = $this->item->category_id = $_POST['category_id'];
+            $this->item->category_product_id = $product->category_id;
+            $this->item->category_id = $this->param('category');
+        }
+ 	elseif(isset($_POST['category_id']))
+            $this->item->category_product_id = $this->item->category_id = $_POST['category_id'];
   	else
  	{
-  	$this->item->category_product_id = $this->param('category');
-    $this->item->category_id = $this->param('category');
+            $this->item->category_product_id = $this->param('category');
+            $this->item->category_id = $this->param('category');
     }
 
 
@@ -490,7 +497,7 @@ class EditProduct extends Widget
         $this->item->price = !isset($_POST['price']) ? isset($_SESSION['last_added_product']->price) ?
                             $_SESSION['last_added_product']->price : 0.00 : $_POST['price'];
         $this->item->currency_id = !isset($_POST['currency_id']) ? isset($_SESSION['last_added_product']->currency_id) ?
-                            $_SESSION['last_added_product']->currency_id : $MainCurrency->code : $_POST['currency_id'];
+                            $_SESSION['last_added_product']->currency_id : $this->main_currency->code : $_POST['currency_id'];
         $this->item->discount = !isset($_POST['discount']) ? isset($_SESSION['last_added_product']->discount) ?
                             $_SESSION['last_added_product']->discount : 0 : $_POST['discount'];
         $this->item->guarantee = !isset($_POST['guarantee']) ? isset($_SESSION['last_added_product']->guarantee) ?
@@ -532,18 +539,18 @@ class EditProduct extends Widget
         {
 
         $this->item->category_id = isset($_POST['category_id']) ? $_POST['category_id'] : $this->item->category_id;
-  		$this->item->brand = isset($_POST['brand']) ? trim($_POST['brand']) : $this->item->brand;
-  		$this->item->model = isset($_POST['model']) ? trim($_POST['model']) : $this->item->model;
-  		$this->item->code = isset($_POST['code']) ? trim($_POST['code']) : $this->item->code;
-  		$this->item->price = isset($_POST['price']) ? $_POST['price']: $this->item->price;
-  		$this->item->currency_id = isset($_POST['currency_id']) ? $_POST['currency_id']: $this->item->currency_id;
-  		$this->item->discount = isset($_POST['discount']) ? $_POST['discount']: $this->item->discount;
-  		$this->item->guarantee = isset($_POST['guarantee']) ? $_POST['guarantee']: $this->item->guarantee;
-  		$this->item->delivery = isset($_POST['delivery']) ? $_POST['delivery']: $this->item->delivery;
-  		$this->item->description = isset($_POST['description']) ? $_POST['description'] : $this->item->description;
-        $this->item->body = isset($_POST['body']) ? $_POST['body'] : $this->item->body;
-        $this->item->defects = isset($_POST['defects']) ? $_POST['defects'] : $this->item->defects;
-        $this->item->quantity = isset($_POST['quantity']) ? $_POST['quantity'] : $this->item->quantity;
+        $this->item->brand = isset($_POST['brand']) ? trim($_POST['brand']) : $this->item->brand;
+        $this->item->model = isset($_POST['model']) ? trim($_POST['model']) : (isset($this->item->model) ? $this->item->model : '');
+        $this->item->code = isset($_POST['code']) ? trim($_POST['code']) : (isset($this->item->code) ? $this->item->code : '');
+        $this->item->price = isset($_POST['price']) ? $_POST['price']: (isset($this->item->price) ? $this->item->price : 0);
+        $this->item->currency_id = isset($_POST['currency_id']) ? $_POST['currency_id']: (isset($this->item->currency_id) ? $this->item->currency_id : $this->main_currency->currency_id);
+        $this->item->discount = isset($_POST['discount']) ? $_POST['discount']: (isset($this->item->discount) ? $this->item->discount : 0);
+        $this->item->guarantee = isset($_POST['guarantee']) ? $_POST['guarantee']: (isset($this->item->guarantee) ? $this->item->guarantee : '');
+        $this->item->delivery = isset($_POST['delivery']) ? $_POST['delivery']: (isset($this->item->delivery) ? $this->item->delivery : 0);
+        $this->item->description = isset($_POST['description']) ? $_POST['description'] : (isset($this->item->description) ? $this->item->description : '');
+        $this->item->body = isset($_POST['body']) ? $_POST['body'] : (isset($this->item->body) ? $this->item->body : '');
+        $this->item->defects = isset($_POST['defects']) ? $_POST['defects'] : (isset($this->item->defects) ? $this->item->defects : '');
+        $this->item->quantity = isset($_POST['quantity']) ? $_POST['quantity'] : (isset($this->item->quantity) ? $this->item->quantity : 0);
 
 
 
@@ -570,7 +577,7 @@ class EditProduct extends Widget
         $hit_num = intval(array_search($this->domain,array_values($this->subbrands)));
         $this->db->query("SELECT hit FROM products WHERE product_id='".$this->item->product_id."'");
         $res = $this->db->result();
-        if($res->hit) $this->item->hit = $res->hit; else $this->item->hit = "0000000000";
+        if(!empty($res) && !empty($res->hit)) $this->item->hit = $res->hit; else $this->item->hit = "0000000000";
 
         if(isset($_POST['hit']))
   		  $this->item->hit{$hit_num} = 1;
@@ -694,11 +701,11 @@ class EditProduct extends Widget
     }
 
 
- 	  $this->db->query("SELECT * FROM `categories` WHERE `parent`=0 ORDER BY `order_num`");
+ 	  $this->db->query("SELECT * FROM `categories` WHERE `parent`=0 ORDER BY enabled DESC, `order_num`");
  	  $categories = $this->db->results();
  	  foreach($categories as $k=>$category)
  	  {
- 	    $this->db->query("SELECT * FROM `categories` WHERE `parent`='$category->category_id' ORDER BY `order_num`");
+ 	    $this->db->query("SELECT * FROM `categories` WHERE `parent`='$category->category_id' ORDER BY enabled DESC, `order_num`");
  	    $subcategories = $this->db->results();
  	    $categories[$k]->subcategories = $subcategories;
  	  }
@@ -1063,6 +1070,8 @@ class EditProductCategory extends Widget
     parent::__construct($parent);
 
     $this->add_param('parent');
+    
+    $this->category = new stdClass();
 
     $this->prepare();
 
@@ -1362,27 +1371,31 @@ class EditProductCategory extends Widget
   	  $this->category = $this->db->result();
 
 
+          if(!empty($this->category)) {
+              $query = sql_placeholder('SELECT *
 
-  	  $query = sql_placeholder('SELECT *
+                                            FROM category_icons
 
-	                    		FROM category_icons
+                                            WHERE category_id=?',
 
-	                    		WHERE category_id=?',
-
-            		            $this->category->category_id);
+                                        $this->category->category_id);
 
 
 
- 	  $this->db->query($query);
+              $this->db->query($query);
 
-  	  $this->foto = $this->db->result();
+              $this->foto = $this->db->result();  
 
-  	  //$this->category->foto_id = $this->foto->foto_id;
+              //$this->category->foto_id = $this->foto->foto_id;
 
-  	  $this->category->filename = $this->foto->filename;
+              $this->category->filename = !empty($this->foto) ? $this->foto->filename : '';
 
-  	  if($this->category->alies)
-  	  $this->category->aly = explode(";;",$this->category->alies);
+              if($this->category->alies)
+              $this->category->aly = explode(";;",$this->category->alies);            
+              
+          } else {
+              $this->foto = new stdClass();
+          }
 
   	  //print_r($this->category);
 
@@ -1406,7 +1419,7 @@ class EditProductCategory extends Widget
 
 
 
-       $delete_get = $this->form_get(array('section'=>'EditProductCategory','action'=>'delete','item_id'=>$this->category->category_id));
+       $delete_get = !empty($this->category) ? $this->form_get(array('section'=>'EditProductCategory','action'=>'delete','item_id'=>$this->category->category_id)) : '';
 
 
 
@@ -1416,7 +1429,7 @@ class EditProductCategory extends Widget
 
       $categories = (new Storefront($this))->get_categories();
 
-      if($this->category->category_id)
+      if(!empty($this->category) && !empty($this->category->category_id))
 
     	  $this->title = $this->lang->EDIT_CATEGORY.' &laquo;'.$this->category->name.'&raquo;';
 
@@ -1430,11 +1443,11 @@ class EditProductCategory extends Widget
 
  	  $this->smarty->assign('Categories', $categories);
 
- 	  $this->smarty->assign('Parent', $parent);
+ 	  //$this->smarty->assign('Parent', $parent);
 
  	  $this->smarty->assign('Delete_get', $delete_get);
 
- 	  $this->smarty->assign('MaxLevel', $max_level);
+ 	  //$this->smarty->assign('MaxLevel', $max_level);
 
       $this->smarty->assign('Lang', $this->lang);
 

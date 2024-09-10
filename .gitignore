@@ -1,3 +1,5 @@
+backup/*
+!backup/.folder
 cache/*
 !cache/.folder
 templates_c/*
@@ -9,7 +11,9 @@ web/*
 987admin123/templates_c/*
 !987admin123/templates_c/.folder
 webstat/*
+!webstat/.folder
 smarty_old/*
 
 ConfigLocal.class.php
 */ConfigLocal.class.php
+nbproject/
